@@ -122,7 +122,7 @@ void websocket::decode(void )
 //      else if (ws.opcode == wsheader_type::PING) { }
 //      else if (ws.opcode == wsheader_type::PONG) { }
 //      else if (ws.opcode == wsheader_type::CLOSE) { close(); }
-      else { qDebug() << "ERROR: Got unexpected WebSocket message.";this->rawRxBuf.erase(this->rawRxBuf.begin());continue;}
+      else {this->rawRxBuf.erase(this->rawRxBuf.begin());continue;}
 
       rawRxBuf.erase(rawRxBuf.begin(), rawRxBuf.begin() + ws.header_size+ws.N);
   }
